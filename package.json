@@ -1,0 +1,25 @@
+{
+  "name": "sandra",
+  "version": "1.0.0",
+  "description": "esto es una prueba",
+  "main": "index.js",
+  "scripts": {
+    "test": "hola"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git"
+  },
+  "keywords": [
+    "keywords"
+  ],
+  "author": "sandra",
+  "license": "ISC",
+  "dependencies": {
+    "angular-ui-grid": "^4.6.4",
+    "body-parser": "^1.5.1",
+    "express": "^4.16.4",
+    "method-override": "^2.1.2",
+    "mongoose": "^5.3.11"
+  }
+}

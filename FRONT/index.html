@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.7.0/angular.js"></script>	
+	<script src="//unpkg.com/angular-ui-router@0.4.2/release/angular-ui-router.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="http://ui-grid.info/release/ui-grid.js"></script>
+	<link rel="stylesheet" href="http://ui-grid.info/release/ui-grid.css" type="text/css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="/app/app.js"></script>
+	<script src="/app/components/inicio/inicio-module.js"></script>
+	<script src="/app/components/inicio/inicio-controller.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	
+	<style>
+		footer {
+		  background-color: #555;
+		  color: white;
+		  padding: 15px;
+		}
+		.cabecera {
+		  background-color: #555;
+		  color: white;
+		  padding: 15px;
+		}
+	</style>
+</head>
+<body ng-app="myNuevaApp">
+	<div class="container text-center col-sm-12 cabecera">
+		<p>Esta es nuestra nueva app</p>
+	</div>
+	<div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12">
+                <div id="myNuevaApp" ui-view autoscroll="false"></div>
+            </div>
+        </div>
+    </div>
+	<footer class="container-fluid text-center">
+		<p>Copyright jiji</p>
+	</footer>
+</body>
+</html>

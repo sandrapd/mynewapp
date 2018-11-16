@@ -1,0 +1,79 @@
+<!doctype html>
+	
+<div class="container-fluid text-center">
+	<div class="row" style="padding-top: 5%">
+		<div class="col-sm-2">
+			<h4>Nuevo</h4>
+		</div>
+		<div class="col-sm-12">
+			<form class="form-horizontal">
+				<div class="form-row">
+					<div class="col"> 
+						<input class="form-control" id="item" name="item" type="text" placeholder="Item" ng-model="vm.model.data.item.item"/>
+					</div>
+					<div class="col"> 
+						<input class="form-control" id="amount" name="amount" type="text" placeholder="Amount" ng-model="vm.model.data.item.amount"/>
+					</div>
+					<div class="col"> 
+						<input class="form-control" id="price" name="price" type="text" placeholder="Price" ng-model="vm.model.data.item.price"/>
+					</div>
+					<div class="col" ng-if="vm.model.config.newCategoryDis">
+						<div class="input-group"> 
+							<select class="custom-select" id="category" name="category" ng-model="vm.model.data.item.category">
+								<option value="">Category</option>
+								<option ng-repeat="cat in vm.model.data.categories" value="{{cat}}">{{cat}}</option>
+							</select>
+							<div class="input-group-append">
+								<button class="btn" type="button" ng-click="vm.addCategory()" >
+									<span aria-hidden="true"><i class="fas fa-plus"></i></span>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="col" ng-if="!vm.model.config.newCategoryDis">
+						<div class="input-group"> 
+							<input id="category" class="form-control" name="category" ng-model="vm.model.data.newCategory"/>
+							<div class="input-group-append">
+								<button ng-if="vm.model.data.newCategory" class="btn" type="button" ng-click="vm.addCategory('confirm')" >
+									<span aria-hidden="true"><i class="fas fa-check-circle"></i></span>
+								</button>
+								<button ng-if="!vm.model.data.newCategory" class="btn" type="button" ng-click="vm.addCategory()">
+									<span aria-hidden="true"><i class="far fa-times-circle"></i></span>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="col"> 
+						<input class="form-control" id="supermarket" name="supermarket" type="text" placeholder="Supermarket" ng-model="vm.model.data.item.supermarket"/>
+					</div>
+					<div class="col" ng-if="vm.model.config.editDis"> 
+						<button class="btn btn-primary " name="submit" type="submit" ng-click="vm.addNuevo()">Add</button>
+					</div>
+					<div class="col" ng-if="!vm.model.config.editDis"> 
+						<button class="btn btn-primary " name="submit" type="submit" ng-click="vm.editItemBD()">Edit</button>
+					</div>
+				</div>	
+			</form>
+		</div>
+	</div>
+	{{vm.model.gridOptions.data}}
+	<div class="row content" style="padding-top: 5%;">
+		<div class="mx-auto col-4" style="">
+			<pre style="text-align: left; padding: 9.5px; margin: 0 0 10px; font-size: 13px; color: #333; word-break: break-all; background-color: #f5f5f5; border: 1px solid #ccc; border-radius: 4px;">
+				<code style="text-align: left;">{{vm.model | json}}</code>
+			</pre>
+		</div>
+	</div>
+	<div class="row content" style="padding: 5%">
+		<div class="col-12">
+			<h5>Aqui vemos lo que se ha añadido por boton</h5>
+			<div class="gridStyle" ui-grid="vm.gridOptions2"></div>
+		</div>
+	</div>
+	<div class="row content" style="padding: 5%">
+		<div class="col-12">
+			<h5>Aqui vemos la base de datos</h5>
+			<div class="gridStyle" ui-grid="vm.gridOptions" ui-grid-move-columns ui-grid-resize-columns></div>
+		</div>
+	</div>
+</div>
