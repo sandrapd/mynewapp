@@ -49,7 +49,13 @@ items.route('/items')
 items.route('/items/:id')
   .put(itemModelCtrl.updateItem)
   .delete(itemModelCtrl.deleteItem);
-  
+
+items.route('/prices/:item')
+	.get(itemModelCtrl.getPrice)
+
+items.route('/supermarkets')
+	.get(itemModelCtrl.findAllSupermarkets)
+
 app.use('/api', items);
 
 // Start server

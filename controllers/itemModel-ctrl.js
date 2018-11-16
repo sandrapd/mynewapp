@@ -54,3 +54,25 @@ exports.deleteItem = function(req, res) {
 			res.status(200).send("Deleted");
 		});
 };
+
+//GET - Get prices by item
+exports.getPrice = function(req, res) {
+	console.log(req.params.item);
+	var param = {'item': req.params.item};
+	itemModel.find(param, function(err, info) {
+		console.log(info);
+		if(err) return res.status(500).send(err.message);
+		console.log('GET /item/' + req.params.item);
+			res.status(200).jsonp(info);
+		}).limit(1).sort('price');
+};
+
+//GET - Return all Supermarkets in the DB
+exports.findAllSupermarkets = function(req, res) {
+	itemModel.find().distinct('supermarket',function(err, supermarket) {
+		if(err) res.send(500, err.message);
+
+		console.log('GET /supermaket')
+			res.status(200).jsonp(supermarket);
+		});
+};
